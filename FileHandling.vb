@@ -18,6 +18,16 @@
             Throw New System.Exception("Age cannot be > 120")
         End If
     End Sub
+    Public Sub ValidateHeight(Height As String)
+        If Convert.ToUInt16(Height) > 300 Then
+            Throw New System.Exception("Height cannot be > 300cm")
+        End If
+    End Sub
+    Public Sub ValidateMass(Mass As String)
+        If Convert.ToUInt16(Mass) > 300 Then
+            Throw New System.Exception("Mass cannot be > 300kg")
+        End If
+    End Sub
     Public Sub AddRecord(NewRecord As Record)
         ' TODO
     End Sub
