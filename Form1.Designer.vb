@@ -23,9 +23,10 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         NameBox = New TextBox()
-        TextBox2 = New TextBox()
-        TextBox3 = New TextBox()
-        TextBox5 = New TextBox()
+        AgeBox = New TextBox()
+        HeightBox = New TextBox()
+        MassBox = New TextBox()
+        SaveButton = New Button()
         SuspendLayout()
         ' 
         ' NameBox
@@ -35,35 +36,45 @@ Partial Class Form1
         NameBox.Size = New Size(125, 27)
         NameBox.TabIndex = 0
         ' 
-        ' TextBox2
+        ' AgeBox
         ' 
-        TextBox2.Location = New Point(266, 212)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(125, 27)
-        TextBox2.TabIndex = 1
+        AgeBox.Location = New Point(266, 212)
+        AgeBox.Name = "AgeBox"
+        AgeBox.Size = New Size(125, 27)
+        AgeBox.TabIndex = 1
         ' 
-        ' TextBox3
+        ' HeightBox
         ' 
-        TextBox3.Location = New Point(434, 212)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(125, 27)
-        TextBox3.TabIndex = 2
+        HeightBox.Location = New Point(434, 212)
+        HeightBox.Name = "HeightBox"
+        HeightBox.Size = New Size(125, 27)
+        HeightBox.TabIndex = 2
         ' 
-        ' TextBox5
+        ' MassBox
         ' 
-        TextBox5.Location = New Point(580, 212)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(125, 27)
-        TextBox5.TabIndex = 4
+        MassBox.Location = New Point(580, 212)
+        MassBox.Name = "MassBox"
+        MassBox.Size = New Size(125, 27)
+        MassBox.TabIndex = 4
+        ' 
+        ' SaveButton
+        ' 
+        SaveButton.Location = New Point(233, 327)
+        SaveButton.Name = "SaveButton"
+        SaveButton.Size = New Size(94, 29)
+        SaveButton.TabIndex = 5
+        SaveButton.Text = "Save"
+        SaveButton.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
-        Controls.Add(TextBox5)
-        Controls.Add(TextBox3)
-        Controls.Add(TextBox2)
+        Controls.Add(SaveButton)
+        Controls.Add(MassBox)
+        Controls.Add(HeightBox)
+        Controls.Add(AgeBox)
         Controls.Add(NameBox)
         Name = "Form1"
         Text = "Form1"
@@ -72,7 +83,8 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents NameBox As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents AgeBox As TextBox
+    Friend WithEvents HeightBox As TextBox
+    Friend WithEvents MassBox As TextBox
+    Friend WithEvents SaveButton As Button
 End Class

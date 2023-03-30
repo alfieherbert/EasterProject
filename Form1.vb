@@ -1,7 +1,14 @@
 ﻿Public Class Form1
+    Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
+        Dim InputRecord As Record
+        Try
+            ValidateName(NameBox.Text)
+            InputRecord.Name = NameBox.Text
+        Catch
+            MsgBox("The name should only contain alphabetical characters", MsgBoxStyle.Information)
+            Exit Sub
+        End Try
 
-    Private Sub NameBox_TextChanged(sender As Object, e As EventArgs) Handles NameBox.TextChanged
-        MsgBox(e.GetType.ToString)
     End Sub
 End Class
 
