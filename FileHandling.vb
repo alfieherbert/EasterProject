@@ -1,9 +1,9 @@
 ﻿Module FileHandling
     Public Structure Record
         Public Name As String
-        Public Age As Integer
-        Public Height As Integer
-        Public Mass As Integer
+        Public Age As UInt16
+        Public Height As UInt16
+        Public Mass As UInt16
         Public BMI As Double
     End Structure
     Public Sub ValidateName(Name As String)
@@ -14,7 +14,9 @@
         Next
     End Sub
     Public Sub ValidateAge(Age As String)
-
+        If Convert.ToUInt16(Age) > 120 Then
+            Throw New System.Exception("Age cannot be > 120")
+        End If
     End Sub
     Public Sub AddRecord(NewRecord As Record)
         ' TODO
