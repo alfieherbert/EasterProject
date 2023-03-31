@@ -31,7 +31,9 @@
             MsgBox("Mass cannot be 0")
             Exit Sub
         End Try
+        MsgBox($"Your BMI is {InputRecord.BMI}")
     End Sub
+
 End Class
 
 

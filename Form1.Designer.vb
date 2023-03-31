@@ -27,6 +27,10 @@ Partial Class Form1
         HeightBox = New TextBox()
         MassBox = New TextBox()
         SaveButton = New Button()
+        Label1 = New Label()
+        Label2 = New Label()
+        Label3 = New Label()
+        Label4 = New Label()
         SuspendLayout()
         ' 
         ' NameBox
@@ -66,11 +70,51 @@ Partial Class Form1
         SaveButton.Text = "Save"
         SaveButton.UseVisualStyleBackColor = True
         ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(147, 154)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(49, 20)
+        Label1.TabIndex = 6
+        Label1.Text = "Name"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(302, 154)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(36, 20)
+        Label2.TabIndex = 7
+        Label2.Text = "Age"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(458, 154)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(88, 20)
+        Label3.TabIndex = 8
+        Label3.Text = "Height (cm)"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(619, 154)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(72, 20)
+        Label4.TabIndex = 9
+        Label4.Text = "Mass (kg)"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(Label4)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
+        Controls.Add(Label1)
         Controls.Add(SaveButton)
         Controls.Add(MassBox)
         Controls.Add(HeightBox)
@@ -87,4 +131,8 @@ Partial Class Form1
     Friend WithEvents HeightBox As TextBox
     Friend WithEvents MassBox As TextBox
     Friend WithEvents SaveButton As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class
