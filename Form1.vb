@@ -26,7 +26,7 @@
         End Try
 
         Try
-            InputRecord.BMI = CalculateBMI(InputRecord.Height, InputRecord.Mass)
+            InputRecord.BMI = CalculateBMI(InputRecord.Height / 100, InputRecord.Mass)
         Catch ex As Exception
             MsgBox("Mass cannot be 0")
             Exit Sub
