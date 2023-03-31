@@ -6,29 +6,38 @@
         Public Mass As UInt16
         Public BMI As Double
     End Structure
-    Public Sub ValidateName(Name As String)
+    Public Function ValidateName(Name As String)
         For i = 0 To Name.Length - 1
             If Not Char.IsLetter(Name.Chars(i)) Then
                 Throw New System.Exception("Name should be a string")
             End If
         Next
-    End Sub
-    Public Sub ValidateAge(Age As String)
-        If Convert.ToUInt16(Age) > 120 Then
+        Return Name
+    End Function
+    Public Function ValidateAge(Age As String)
+        Dim AgeOut = Convert.ToUInt16(Age)
+        If AgeOut > 120 Then
             Throw New System.Exception("Age cannot be > 120")
         End If
-    End Sub
-    Public Sub ValidateHeight(Height As String)
-        If Convert.ToUInt16(Height) > 300 Then
+        Return AgeOut
+    End Function
+    Public Function ValidateHeight(Height As String)
+        Dim HeightOut = Convert.ToUInt16(Height)
+        If HeightOut > 300 Then
             Throw New System.Exception("Height cannot be > 300cm")
         End If
-    End Sub
-    Public Sub ValidateMass(Mass As String)
-        If Convert.ToUInt16(Mass) > 300 Then
+        Return HeightOut / 100
+    End Function
+    Public Function ValidateMass(Mass As String)
+        Dim MassOut = Convert.ToUInt16(Mass)
+        If MassOut > 300 Then
             Throw New System.Exception("Mass cannot be > 300kg")
         End If
-    End Sub
+        Return MassOut
+    End Function
     Public Sub AddRecord(NewRecord As Record)
-        ' TODO
+        Dim sr As New System.IO.StreamReader("input.csv")
+        Dim sw As New System.IO.StreamWriter("newinput.csv")
+
     End Sub
 End Module
