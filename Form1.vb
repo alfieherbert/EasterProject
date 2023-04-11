@@ -32,6 +32,7 @@
             Exit Sub
         End Try
         MsgBox($"Your BMI is {InputRecord.BMI}")
+        AddRecord(InputRecord)
     End Sub
 
 End Class
