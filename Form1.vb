@@ -33,6 +33,12 @@
         End Try
         MsgBox($"Your BMI is {InputRecord.BMI}")
         AddRecord(InputRecord)
+        Dim AverageAge, AverageHeight, AverageWeight, AverageBMI
+        AverageAge = CalculateAverage(DataType.Age)
+        AverageHeight = CalculateAverage(DataType.Height)
+        AverageWeight = CalculateAverage(DataType.Mass)
+        AverageBMI = CalculateAverage(DataType.BMI)
+        MsgBox($"Average age: {AverageAge}, average height: {AverageHeight}, average mass: {AverageWeight}, average BMI: {AverageBMI}")
     End Sub
 
 End Class

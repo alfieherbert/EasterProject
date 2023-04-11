@@ -33,6 +33,18 @@
             Case DataType.BMI
                 offset = 4
         End Select
-
+        Dim line
+        Dim fields()
+        Dim sr As New System.IO.StreamReader("input.csv")
+        Dim sum As Double
+        Dim linescount As Integer
+        Do Until sr.EndOfStream
+            line = sr.ReadLine()
+            fields = line.split(",")
+            sum += fields(offset)
+            linescount += 1
+        Loop
+        sr.Close()
+        Return sum / linescount
     End Function
 End Module
