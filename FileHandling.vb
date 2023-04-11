@@ -1,4 +1,5 @@
 ﻿Module FileHandling
+    ' Enum with a variant for each field, used to make calculating averages cleaner
     Public Enum DataType
         Name
         Age
@@ -6,6 +7,7 @@
         Mass
         BMI
     End Enum
+    ' Structure to hold a record
     Public Structure Record
         Public Name As String
         Public Age As UInt16
@@ -13,7 +15,7 @@
         Public Mass As UInt16
         Public BMI As Double
     End Structure
-
+    ' Appends a record to the input.csv file
     Public Sub AddRecord(NewRecord As Record)
         Dim InsertRecord As String
         InsertRecord = $"{NewRecord.Name},{NewRecord.Age},{NewRecord.Height},{NewRecord.Mass},{NewRecord.BMI}"
@@ -21,32 +23,8 @@
         sw.WriteLine(InsertRecord)
         sw.Close()
     End Sub
-    Public Function CalculateAverage(Type As DataType) As Decimal
-        Dim offset As Integer
-        Select Case Type
-            Case DataType.Age
-                offset = 1
-            Case DataType.Height
-                offset = 2
-            Case DataType.Mass
-                offset = 3
-            Case DataType.BMI
-                offset = 4
-        End Select
-        Dim line
-        Dim fields()
-        Dim sr As New System.IO.StreamReader("input.csv")
-        Dim sum As Double
-        Dim linescount As Integer
-        Do Until sr.EndOfStream
-            line = sr.ReadLine()
-            fields = line.split(",")
-            sum += fields(offset)
-            linescount += 1
-        Loop
-        sr.Close()
-        Return sum / linescount
-    End Function
+
+    ' Searches the input.csv file for records matching the Name and Age given
     Public Function Search(Name As String, Age As String) As List(Of String)
         Dim sr As New System.IO.StreamReader("input.csv")
         Dim line

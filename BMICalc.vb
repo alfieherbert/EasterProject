@@ -32,4 +32,33 @@
     Public Function CalculateBMI(Height As Double, Mass As Integer) As Double
         Return (Mass) / (Height ^ 2) ' Calculates BMI with the formula BMI = Mass/Height^2
     End Function
+    ' Calculates the average value of a field from the input.csv file
+    Public Function CalculateAverage(Type As DataType) As Decimal
+        Dim offset As Integer
+        ' Chooses which field to calculate the average of
+        Select Case Type
+            Case DataType.Age
+                offset = 1
+            Case DataType.Height
+                offset = 2
+            Case DataType.Mass
+                offset = 3
+            Case DataType.BMI
+                offset = 4
+        End Select
+        Dim line
+        Dim fields()
+        Dim sr As New System.IO.StreamReader("input.csv")
+        Dim sum As Double
+        Dim linescount As Integer
+        Do Until sr.EndOfStream
+            line = sr.ReadLine()
+            fields = line.split(",")
+            sum += fields(offset)
+            linescount += 1
+        Loop
+        sr.Close()
+        ' Mean = sum(x)/n
+        Return sum / linescount
+    End Function
 End Module

@@ -1,5 +1,6 @@
 ﻿Public Class Form1
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
+        ' Validate the data inputted and save to a record structure
         Dim InputRecord As Record
         Try
             InputRecord.Name = ValidateName(NameBox.Text)
@@ -33,6 +34,7 @@
         End Try
         MsgBox($"Your BMI is {InputRecord.BMI}")
         AddRecord(InputRecord)
+        ' Calculate mean values
         Dim AverageAge, AverageHeight, AverageWeight, AverageBMI
         AverageAge = CalculateAverage(DataType.Age)
         AverageHeight = CalculateAverage(DataType.Height)
@@ -45,6 +47,7 @@
         Dim Name As String
         Dim Age As String
         Dim Matches
+        ' Validate inputted data
         Try
             Name = ValidateName(NameBox.Text)
         Catch
@@ -57,15 +60,18 @@
             MsgBox("You must enter an age between 0 and 120")
             Exit Sub
         End Try
+        ' Find any matches
         Matches = Search(Name, Age)
         Dim fields()
         Dim FoundMatch = False
         For Each match In Matches
+            ' Output each match with a msgbox
             FoundMatch = True
             fields = match.split(",")
             MsgBox($"Found a match: height: {fields(2)}, weight: {fields(3)}, BMI: {fields(4)}")
         Next match
         If Not FoundMatch Then
+            ' If no matches are found
             MsgBox("No matches found")
         End If
     End Sub
