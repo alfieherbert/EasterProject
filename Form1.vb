@@ -42,7 +42,32 @@
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
-
+        Dim Name As String
+        Dim Age As String
+        Dim Matches
+        Try
+            Name = ValidateName(NameBox.Text)
+        Catch
+            MsgBox("The name should only contain alphabetical characters", MsgBoxStyle.Information)
+            Exit Sub
+        End Try
+        Try
+            Age = ValidateAge(AgeBox.Text).ToString
+        Catch ex As Exception
+            MsgBox("You must enter an age between 0 and 120")
+            Exit Sub
+        End Try
+        Matches = Search(Name, Age)
+        Dim fields()
+        Dim FoundMatch = False
+        For Each match In Matches
+            FoundMatch = True
+            fields = match.split(",")
+            MsgBox($"Found a match: height: {fields(2)}, weight: {fields(3)}, BMI: {fields(4)}")
+        Next match
+        If Not FoundMatch Then
+            MsgBox("No matches found")
+        End If
     End Sub
 End Class
 
