@@ -47,4 +47,19 @@
         sr.Close()
         Return sum / linescount
     End Function
+    Public Function Search(Name As String, Age As String) As ArrayList
+        Dim sr As New System.IO.StreamReader("input.csv")
+        Dim line
+        Dim record()
+        Dim found As New ArrayList
+        Do Until sr.EndOfStream
+            line = sr.ReadLine()
+            record = line.split(",")
+            If record(0) = Name And record(1) = Age Then
+                found.Add(line)
+            End If
+        Loop
+        sr.Close()
+        Return found
+    End Function
 End Module

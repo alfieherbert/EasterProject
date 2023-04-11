@@ -31,6 +31,7 @@ Partial Class Form1
         Label2 = New Label()
         Label3 = New Label()
         Label4 = New Label()
+        SearchButton = New Button()
         SuspendLayout()
         ' 
         ' NameBox
@@ -106,11 +107,21 @@ Partial Class Form1
         Label4.TabIndex = 9
         Label4.Text = "Mass (kg)"
         ' 
+        ' SearchButton
+        ' 
+        SearchButton.Location = New Point(538, 327)
+        SearchButton.Name = "SearchButton"
+        SearchButton.Size = New Size(94, 29)
+        SearchButton.TabIndex = 10
+        SearchButton.Text = "Search"
+        SearchButton.UseVisualStyleBackColor = True
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(SearchButton)
         Controls.Add(Label4)
         Controls.Add(Label3)
         Controls.Add(Label2)
@@ -135,4 +146,5 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents SearchButton As Button
 End Class

@@ -41,6 +41,9 @@
         MsgBox($"Average age: {AverageAge}, average height: {AverageHeight}, average mass: {AverageWeight}, average BMI: {AverageBMI}")
     End Sub
 
+    Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
+
+    End Sub
 End Class
 
 
